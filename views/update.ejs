@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update</title>
+    <link rel="stylesheet" href="../public/style/update.css">
+</head>
+<body>
+    <h1>Update</h1>
+    <div class="container">
+        <div class="update">
+            <div class="form-card">
+                <form action="/users/<%= user.id %>" method="POST" enctype="multipart/form-data">
+                    <input type="text" placeholder="Name" name="name" value="<%= user.name %>" required>
+                    <input type="text" placeholder="Email" name="email" value="<%= user.email %>" required>
+                    <input type="tel" placeholder="Phone" name="phone" value="<%= user.phone %>" required>
+                    <label for="file">Choose image</label>
+                    <input type="file" id="file" name="image" accept="image/*" onchange="displayFileName(this)" required>
+                    <span id="selected-file-text">No image chosen</span>
+                    <button type="submit">Save Changes</button>
+                </form>                
+            </div>
+        </div>
+        <div class="card">
+            <a href="/read" id="user">
+                <div class="image">
+                    <img src="<%= user.image %>" alt="users picture">
+                </div>
+                <div class="info">
+                    <div class="fname">
+                        <p>
+                            <%= user.name %>
+                        </p>
+                    </div>
+                    <div class="email">
+                        <p>
+                            <%= user.email %>
+                        </p>
+                    </div>
+                    <div class="phone">
+                        <p>
+                            <%= user.phone %>
+                        </p>
+                    </div>
+                </div>    
+            </a>
+        </div>
+    </div>
+    <div class="del">
+        <button class="btn" data-user-id="<%= user.id %>">Delete User</button>
+    </div>
+    <script src="../public/js/update.js"></script>
+    <script>
+        const initialImageName = "<%= user.image %>";
+        displayFileName(document.getElementById("file"), initialImageName);
+    </script>
+</body>
+</html>

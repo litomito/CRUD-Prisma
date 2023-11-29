@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(34, 34, 34);
+    color: rgb(255, 211, 140);
+    text-align: center;
+}
+
+h1 {
+    margin: 10px;
+    font-size: 70px;
+}
+
+div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 50vh;
+    font-size: 20px;
+    gap: 6px;
+}
+
+div a {
+    text-decoration: none;
+    color: rgb(255, 211, 140);
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read</title>
+    <link rel="stylesheet" href="../public/style/read.css">
+</head>
+<body>
+    <h1>Read</h1>
+
+    <div class="container">
+        <div class="users">
+            <% for (let i = 0; i < users.length; i++) {%>
+                <a href="/update/<%= users[i].id %>" id="user">
+                    <div class="card">
+                        <div class="image">
+                            <img src="<%= users[i].image.toLowerCase() %>" alt="users picture">
+                        </div>
+                        <div class="info">
+                            <div class="name">
+                                <p>
+                                    <%= users[i].name %>
+                                </p>
+                            </div>
+                            <div class="email">
+                                <p>
+                                    <%= users[i].email %>
+                                </p>
+                            </div>
+                            <div class="phone">
+                                <p>
+                                    <%= users[i].phone %>
+                                </p>
+                            </div>
+                        </div>    
+                    </div>
+                </a>
+         <% } %>
+        </div>
+    </div>
+</body>
+</html>
